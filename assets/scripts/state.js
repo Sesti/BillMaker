@@ -7,7 +7,6 @@ var View = function( querySelector ){
  	this.slideOut = function() {
 		element.classList.add( 'app__view-slideOut' );
 		setTimeout( function (){
-		 	element.classList.add( 'app__view-start' );
 		 	element.classList.add( 'app__view-hidden');
 		 	element.classList.remove( 'app__view-slideOut' );
 		}, transitionTime );
@@ -15,7 +14,9 @@ var View = function( querySelector ){
 	this.slideIn = function (){
 	 	element.classList.remove( 'app__view-hidden' );
 	 	element.classList.add( 'app__view-slideIn');
-		 	element.classList.remove( 'app__view-start' );
+	 	setTimeout(function(){
+	 		element.classList.remove( 'app__view-slideIn' );
+		}, transitionTime);
 	}
 	this.getQuery = function(){
  	 	return query;
@@ -60,6 +61,8 @@ document.addEventListener( "DOMContentLoaded", function (){
 	
 			if ( self.matches( '.content__choice-add-entry' ) ) {
 	 			controller.change( viewAddEntry );
+			}else if( self.matches( '.content__choice-view-start')){
+			 	controller.change( viewMain );
 			}
   		}, false );
  	} );

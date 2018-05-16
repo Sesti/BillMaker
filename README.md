@@ -13,6 +13,9 @@ A small app to enter job entry and save them to a csv file. It can also make a b
 
 #### Second step
 - [ ] Create view to list data per month
+    - [ ] List all data in a table
+    - [ ] Add filter for date
+    - [ ] Add filter for client  
 - [ ] Create action to save month work to bill
 
 #### Candy step

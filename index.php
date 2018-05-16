@@ -16,7 +16,7 @@
     <section class="app__header">
         <h1>Bill Maker</h1>
     </section>
-    <section class="app__view app__view-main app__view-hidden app__view-start">
+    <section class="app__view app__view-main app__view-hidden">
         <div class="view__container">
             <div class="content__choice-box content__choice-add-entry content__choice-box-full">
                 <img src="<?= ICON_DIR . "add_entry.svg" ?>" alt="Add job entry">
@@ -36,10 +36,26 @@
             </div>
         </div>
     </section>
-    <section class="app__view app__view-add-entry app__view-hidden app__view-start">
+    <section class="app__view app__view-add-entry app__view-hidden">
         <div class="view__container">
+            <span class="content__choice-box content__choice-view-start">Back</span>
             <form id="form_add_entry">
-                <input type="text"/>
+                <label for="e_date">
+                    <span>Date</span>
+                    <input type="date" name="e_date"/>
+                </label>
+                <label for="e_time">
+                    <span>Hours</span>
+                    <input type="number" name="e_time"/>
+                </label>
+                <label for="e_client">
+                    <span>Client</span>
+                    <input type="text" name="e_client"/>
+                </label>
+                <label for="e_description">
+                    <span>Description</span>
+                    <input type="text" name="e_description"/>
+                </label>
             </form>
         </div>
     </section>
