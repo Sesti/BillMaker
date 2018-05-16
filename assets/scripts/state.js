@@ -1,38 +1,68 @@
-var App = function () {
+
+var View = function( querySelector ){
+ 	var query = querySelector;
+ 	var element = document.querySelector(querySelector);
+ 	var transitionTime = 1000;
  	
- 	// Constructor
- 	console.log( "App init : " + this );
- 	viewMain = viewModel('app__view-main');
- 	viewAddEntry = viewModel('app__view-add-entry');
- 	currentState = viewMain;
- 	
- 	this.switch = function (state){
- 	 	console.log('Change state to ' + state);
- 	 	currentState.out();
- 	  	currentState = state;
- 	  	currentState.in();
-	};
- 	
- 	this.spawn = function (state){
- 		console.log('Spawning state ' + state);
+ 	this.slideOut = function() {
+		element.classList.add( 'app__view-slideOut' );
+		setTimeout( function (){
+		 	element.classList.add( 'app__view-start' );
+		 	element.classList.add( 'app__view-hidden');
+		 	element.classList.remove( 'app__view-slideOut' );
+		}, transitionTime );
+	}
+	this.slideIn = function (){
+	 	element.classList.remove( 'app__view-hidden' );
+	 	element.classList.add( 'app__view-slideIn');
+		 	element.classList.remove( 'app__view-start' );
+	}
+	this.getQuery = function(){
+ 	 	return query;
+	}
+	this.getElement = function(){
+ 	 	return element;
 	}
 };
 
-viewModel = function(querySelector){
- 
- 	var element = document.querySelector( querySelector );
- 
- 	this.out = function(){
- 		element.classList.add('app__view-slideOut');
- 		setTimeout(function(){
- 			element.classList.add('app__view-hidden');
- 			element.classList.remove('app__view-slideOut');
-		},550);
- 	};
- 	
- 	this.in = function(){
-	 	element.classList.remove( 'app__view-hidden' );
- 		element.classList.add('app__view-slideIn');
-	};
+var Controller = function(){
+ 	var currentState = undefined;
+ 	this.spawn = function(state){
+	 	currentState = state;
+	 	currentState.getElement().classList.remove( 'app__view-hidden' );
+	 	currentState.getElement().classList.remove( 'app__view-start' );
+	}
+	this.change = function(state){
+ 	 	currentState.slideOut();
+ 	 	currentState = state;
+ 	 	currentState.slideIn();
+ 	 	
+	}
 };
+var viewMain;
+var viewAddEntry;
+var controller;
+var choiceList;
+
+document.addEventListener( "DOMContentLoaded", function (){
+ 	viewMain = new View( '.app__view-main' );
+ 	viewAddEntry = new View( '.app__view-add-entry' );
+ 	controller = new Controller();
+ 	controller.spawn( viewMain );
+ 
+ 	choiceList = document.querySelectorAll( '.content__choice-box' );
+ 	choiceList.forEach( function (choice){
+  		choice.addEventListener( 'click', function ( event ){
+  		
+			if ( !event.currentTarget.matches( '.content__choice-box' ) ) return;
+	
+			self = event.currentTarget;
+	
+			if ( self.matches( '.content__choice-add-entry' ) ) {
+	 			controller.change( viewAddEntry );
+			}
+  		}, false );
+ 	} );
+ 
+} );
 

@@ -47,23 +47,30 @@ h2{
 }
 .app__view{
     width: 100%;
+    transform: translateX(0);
 }
 .app__view-hidden{
     display:none;
     transition: none;
+}
+.app__view-appear{
+    transition:0.55s all ease;
+    opacity:1;
+}
+.app__view-start{
+    position:absolute;
     transform: translateX(-100%);
 }
 .app__view-slideOut{
     position:absolute;
-    transition: 0.55s all ease-out;
+    transition: 1s all ease-out;
     transform:translateX(100%);
     opacity:0;
 }
 .app__view-slideIn {
     position: absolute;
-    transition: 0.55s all ease-out;
-    transform: translateX(0%);
-    opacity: 0;
+    transition: 1s all ease-out;
+    opacity: 1;
 }
 .view__container{
     width:100%;

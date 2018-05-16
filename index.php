@@ -16,9 +16,9 @@
     <section class="app__header">
         <h1>Bill Maker</h1>
     </section>
-    <section class="app__view app__view-main">
+    <section class="app__view app__view-main app__view-hidden app__view-start">
         <div class="view__container">
-            <div class="content__choice-box content__choice-box-full">
+            <div class="content__choice-box content__choice-add-entry content__choice-box-full">
                 <img src="<?= ICON_DIR . "add_entry.svg" ?>" alt="Add job entry">
                 <h2>Add entry</h2>
             </div>
@@ -36,15 +36,13 @@
             </div>
         </div>
     </section>
+    <section class="app__view app__view-add-entry app__view-hidden app__view-start">
+        <div class="view__container">
+            <form id="form_add_entry">
+                <input type="text"/>
+            </form>
+        </div>
+    </section>
 </main>
-<main class="app__view app__view-add-entry app__view-hidden">
-    <form id="form_add_entry">
-        <input type="text" />
-    </form>
-</main>
-<script>
-    var s = new App();
-    s.spawn(s.viewMain);
-</script>
 </body>
 </html>
