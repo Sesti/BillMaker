@@ -1,0 +1,19 @@
+{
+  "name": "billmaker",
+  "version": "1.0.0",
+  "description": "A small app to enter job entry and save them to a csv file. It can also make a bill from the job entry.",
+  "main": "index.php",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/npm/npm.git"
+  },
+  "keywords": [
+    "bill",
+    "maker"
+  ],
+  "author": "Sébastian Pilon",
+  "license": "ISC"
+}
