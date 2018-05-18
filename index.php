@@ -10,6 +10,8 @@
     <link rel="stylesheet" type="text/css" href="assets/styles/import.css"/>
     <link rel="stylesheet" type="text/css" href="assets/styles/style.css"/>
     <script type="application/javascript" src="assets/scripts/state.js"></script>
+    <script type="application/javascript" src="assets/scripts/addEntry.js"></script>
+    <script type="application/javascript" src="assets/scripts/main.js"></script>
 </head>
 <body>
 <main class="app__window">
@@ -40,9 +42,10 @@
         <div class="view__container">
             <span class="content__choice-box content__choice-view-start">Back</span>
             <form id="form_add_entry">
+                <input type="hidden" name="e_token" value="1" />
                 <label for="e_date">
                     <span>Date</span>
-                    <input type="date" name="e_date"/>
+                    <input type="date" name="e_date" value="<?= date("Y-m-j") ?>"/>
                 </label>
                 <label for="e_time">
                     <span>Hours</span>
@@ -54,9 +57,10 @@
                 </label>
                 <label for="e_description">
                     <span>Description</span>
-                    <input type="text" name="e_description"/>
+                    <textarea name="e_description"></textarea>
                 </label>
             </form>
+            <button class="js__submit-add-entry">Add Entry</button>
         </div>
     </section>
 </main>
