@@ -7,7 +7,7 @@ document.addEventListener( "DOMContentLoaded", function (){
  	viewMain = new View( '.app__view-main' );
  	viewAddEntry = new View( '.app__view-add-entry' );
  	controller = new Controller();
-  	controller.spawn( viewMain );
+  	controller.spawn( viewAddEntry );
  
  	choiceList = document.querySelectorAll( '.content__choice-box' );
  	choiceList.forEach( function ( choice ){

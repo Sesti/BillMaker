@@ -12,7 +12,6 @@ var Form = function( querySelector ){
 	 	
 	 	console.log(formArray.join("&"));
   		var xhr = new XMLHttpRequest();
-  		//xhr.addEventListener( 'load', this.complete( newXHR.responseText) );
 		xhr.onreadystatechange = function (){
 		 	if ( xhr.readyState > 3 && xhr.status == 200 ) {
 			 	callback( xhr.responseText );
@@ -24,10 +23,11 @@ var Form = function( querySelector ){
  	}
  	
  	this.complete = function(data){
- 	 	if(data.status = 200){
-		 	console.log( 'returned : ' + data );
-		}else if(data.status = 500){
- 	 	 	console.log( 'Error' );
+	 	var response = JSON.parse( data );
+ 	 	if( response.status = 200){
+		 	console.log( 'Success : ' + response.message );
+		}else if( response.status = 500){
+ 	 	 	console.log( 'Error : ' + reponse.message);
 		}
 	}
 };
