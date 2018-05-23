@@ -102,13 +102,15 @@ h2{
     display:block;
     margin:0 auto;
 }
-
+.app__view-add-entry .view__container{
+    display:flex;
+}
 .content__choice-box {
     border: 3px solid #999;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-    float:left;
+    float: left;
     margin-bottom:2%;
     padding:2.5%;
     cursor:pointer;
@@ -118,6 +120,9 @@ h2{
 .content__choice-box:hover{
     transform:translateY(-8px);
     box-shadow: 0px 8px 7px 1px rgba(0, 0, 0, 0.4);
+}
+.content__choice-view-start{
+    height:66px;
 }
 .content__choice-box-full{
     width:100%;
@@ -137,5 +142,97 @@ h2{
     width:5vw;
     margin:0 auto;
     display:block;
+    margin-bottom:20px;
+}
+
+/*
+    FORM
+ */
+.form__add-entry{
+    flex:2;
+}
+.form__add-entry label{
+    width:100%;
+    display:block;
+    text-align: center;
+    margin-bottom:25px;
+}
+.form__add-entry label span{
+    display:block;
+    font-size:20px;
+    font-family:"Open Sans";
+    margin-bottom:6px;
+}
+.form__add-entry label input,
+.form__add-entry label textarea{
+    width:100%;
+    max-width:350px;
+}
+.form__add-entry label textarea{
+    resize: vertical;
+    height: 200px;
+}
+.form__add-entry button{
+    border: 3px solid #999;
+    border-radius: 5px;
+    padding: 10px 35px;
+    display: block;
+    margin: 0 auto;
+    color: #777;
+    font-family: Open Sans;
+    font-size: 26px;
+    background: transparent;
+    cursor: pointer;
+    overflow:hidden;
+    position:relative;
+}
+.form__add-entry button:before{
+    content: "";
+    position: absolute;
+    width: 135%;
+    height: 100%;
+    right: 100%;
+    top:0;
+    transition: 0.3s right cubic-bezier(0.22, 0.57, 0.16, 0.65);
+    background: rgba(152, 255, 142, 0.6);
+}
+
+.form__add-entry button:hover:before{
+    right:-30px;
+    transform: skew(41deg);
+}
+.form__notification{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px solid #666;
+    color: #666;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 340px;
+    height: 90%;
+    max-height: 280px;
+    background: #FFF;
+    font-family: Open Sans;
+    font-size: 40px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 1px 5px 24px 4px rgba(0, 0, 0, 0.4);
+    transition: 0.4s opacity ease;
+    opacity:1;
+}
+.form__notification-hidden{
+    display:none;
+    opacity:0;
+}
+.form__notification-fade{
+    opacity:0;
+}
+.form__notification img{
+    width:50px;
     margin-bottom:20px;
 }

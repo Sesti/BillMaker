@@ -1,6 +1,8 @@
 var Form = function( querySelector ){
  	var query = querySelector;
  	var element = document.querySelector( querySelector );
+ 	var animationTime = 2000;
+ 	var fadeTime = 400;
  	
  	this.submit = function(callback){
  	
@@ -10,7 +12,6 @@ var Form = function( querySelector ){
 	 	 	formArray.push(input.name+"="+ encodeURIComponent( input.value ));
 		});
 	 	
-	 	console.log(formArray.join("&"));
   		var xhr = new XMLHttpRequest();
 		xhr.onreadystatechange = function (){
 		 	if ( xhr.readyState > 3 && xhr.status == 200 ) {
@@ -24,10 +25,21 @@ var Form = function( querySelector ){
  	
  	this.complete = function(data){
 	 	var response = JSON.parse( data );
- 	 	if( response.status = 200){
+	 	
+ 	 	if( response.status == 200){
 		 	console.log( 'Success : ' + response.message );
-		}else if( response.status = 500){
- 	 	 	console.log( 'Error : ' + reponse.message);
+		 	var success = document.querySelector('.form__notification-success');
+		 	success.classList.remove('form__notification-hidden');
+		 	setTimeout(function(){
+			 	success.classList.add( 'form__notification-fade' );
+			}, animationTime);
+		 	setTimeout(function(){
+			 	success.classList.add( 'form__notification-hidden' );
+			 	success.classList.remove( 'form__notification-fade' );
+			}, animationTime + fadeTime);
+		 	
+		}else if( response.status == 500){
+ 	 	 	console.log( 'Error : ' + response.message);
 		}
 	}
 };

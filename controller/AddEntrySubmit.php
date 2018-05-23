@@ -16,7 +16,7 @@ if( isset($_POST['e_token']) && $_POST['e_token'] == 1){
 		$csv = Writer::createFromPath( ROOT_PATH.'/bin/entries.csv', 'a+');
 		$csv->insertOne([$_POST['e_date'], $_POST['e_time'], $_POST['e_client'], $_POST['e_description']]);
 	}catch ( Exception | RuntimeException $e){
-	
+		$return->setMessage( $e->getMessage() );
 	}
 	
 	
