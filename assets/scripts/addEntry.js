@@ -29,17 +29,21 @@ var Form = function( querySelector ){
  	 	if( response.status == 200){
 		 	console.log( 'Success : ' + response.message );
 		 	var success = document.querySelector('.form__notification-success');
-		 	success.classList.remove('form__notification-hidden');
-		 	setTimeout(function(){
-			 	success.classList.add( 'form__notification-fade' );
-			}, animationTime);
-		 	setTimeout(function(){
-			 	success.classList.add( 'form__notification-hidden' );
-			 	success.classList.remove( 'form__notification-fade' );
-			}, animationTime + fadeTime);
+		 	this.showSuccess();
 		 	
 		}else if( response.status == 500){
  	 	 	console.log( 'Error : ' + response.message);
 		}
+	}
+	
+	this.showSuccess = function(){
+	  	success.classList.remove( 'form__notification-hidden' );
+	  	setTimeout( function (){
+			success.classList.add( 'form__notification-fade' );
+	  	}, animationTime );
+	  	setTimeout( function (){
+			success.classList.add( 'form__notification-hidden' );
+			success.classList.remove( 'form__notification-fade' );
+	  	}, animationTime + fadeTime );
 	}
 };

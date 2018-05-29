@@ -1,13 +1,13 @@
-var viewMain;
-var viewAddEntry;
+var viewMain, viewAddEntry, viewViewData;
 var controller;
 var choiceList;
 
 document.addEventListener( "DOMContentLoaded", function (){
  	viewMain = new View( '.app__view-main' );
  	viewAddEntry = new View( '.app__view-add-entry' );
+ 	viewViewData = new View( '.app__view-view-data');
  	controller = new Controller();
-  	controller.spawn( viewAddEntry );
+  	controller.spawn( viewMain );
  
  	choiceList = document.querySelectorAll( '.content__choice-box' );
  	choiceList.forEach( function ( choice ){
@@ -21,6 +21,8 @@ document.addEventListener( "DOMContentLoaded", function (){
 	 			controller.change( viewAddEntry );
 			} else if ( self.matches( '.content__choice-view-start' ) ) {
 	 			controller.change( viewMain );
+			} else if ( self.matches( '.content__choice-view-data') ) {
+				controller.change( viewViewData );
 			}
   		}, false );
  	} );

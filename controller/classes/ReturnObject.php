@@ -11,6 +11,10 @@ class ReturnObject	implements JsonSerializable {
 	private $status;
 	private $message;
 	
+	public function send() {
+		echo json_encode( $this );
+	}
+	
 	/**
 	 * @return mixed
 	 */

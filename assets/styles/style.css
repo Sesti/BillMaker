@@ -52,15 +52,18 @@ h2{
     VIEWS
  */
 .app__window{
-    width:98%;
-    height:96%;
+    width: 70%;
+    height: 80%;
     background:#FFF;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
-    padding:5% 1vw 2vh 1vw;
+    padding:2% 0 2vh 0;
     overflow:hidden;
     position:relative;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
 }
 .app__window h1{
     text-align:center;
@@ -71,6 +74,7 @@ h2{
 .app__view{
     width: 100%;
     transform: translateX(0);
+    padding:0 2vw;
 }
 .app__view-hidden{
     display:none;
@@ -89,12 +93,14 @@ h2{
     -webkit-animation: 1s slideOut;
     -o-animation: 1s slideOut;
     animation: 1s slideOut;
+    animation-fill-mode: forwards;
 }
 .app__view-slideIn {
     position: absolute;
     -webkit-animation: 1s slideIn;
     -o-animation: 1s slideIn;
     animation: 1s slideIn;
+    animation-fill-mode: forwards;
 }
 .view__container{
     width:100%;
