@@ -4,7 +4,6 @@ require_once('classes/DataContainer.php');
 require_once('../config.php');
 
 use League\Csv\Exception;
-use League\Csv\Reader;
 use League\Csv\Writer;
 
 $return = new ReturnObject();

@@ -24,6 +24,17 @@
                 <textarea name="e_description"></textarea>
             </label>
             <button class="js__submit-add-entry">Add Entry</button>
+            <span class="js__fill-form">Fill</span>
+            <script>
+                /* Fill form with dummy value for quick testing */
+                document.addEventListener('click', function(event){
+                    if ( !event.target.matches( '.js__fill-form' ) ) return;
+				        (document.getElementsByName( 'e_date' )).item(0).setAttribute( 'value', '<?= date( "Y-m-j" ) ?>' );
+				        (document.getElementsByName( 'e_time' )).item(0).setAttribute( 'value', '2' );
+				        (document.getElementsByName( 'e_client' )).item(0).setAttribute( 'value', 'Testoman' );
+				        (document.getElementsByName( 'e_description' )).item(0).innerHTML = 'CSS Responsive';
+                } );
+            </script>
         </form>
     </div>
 </section>

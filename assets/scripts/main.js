@@ -30,8 +30,8 @@ document.addEventListener( "DOMContentLoaded", function (){
  	var formDOM = document.querySelector(".js__submit-add-entry");
  	formDOM.addEventListener( 'click', function( event ){
  	 	event.preventDefault();
-	 	var formWatcher = new Form();
-	 	formWatcher.submit(formWatcher.complete);
+	 	Form.setForm("#form_add_entry");
+	 	Form.submit(Form.complete);
 	});
  	
  
