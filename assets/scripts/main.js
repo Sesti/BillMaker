@@ -6,6 +6,7 @@ document.addEventListener( "DOMContentLoaded", function (){
  	viewMain = new View( '.app__view-main' );
  	viewAddEntry = new View( '.app__view-add-entry' );
  	viewViewData = new View( '.app__view-view-data');
+ 	viewViewData.constructor = DataFactory.requestData;
  	controller = new Controller();
   	controller.spawn( viewMain );
  
@@ -23,6 +24,7 @@ document.addEventListener( "DOMContentLoaded", function (){
 	 			controller.change( viewMain );
 			} else if ( self.matches( '.content__choice-view-data') ) {
 				controller.change( viewViewData );
+				viewViewData.constructor();
 			}
   		}, false );
  	} );

@@ -24,6 +24,9 @@ var View = function( querySelector ){
 	this.getElement = function(){
  	 	return element;
 	}
+	this.constructor = function(){
+ 		console.log('No constructor implemented yet...');
+	}
 };
 
 var Controller = function(){

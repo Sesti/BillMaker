@@ -4,6 +4,8 @@
 	
 	use League\Csv\Exception;
 	use League\Csv\Reader;
+
+	$data = array();
 	
 	$path = ROOT_PATH . '/bin/entries.csv';
 	$openingMode = 'r';
@@ -11,8 +13,11 @@
 	$csv->setHeaderOffset( 0 );
 	$header_offset = $csv->getHeaderOffset(); //returns 0
 	$header = $csv->getHeader();
-	$records = $reader->getRecords();
-	foreach ( $records as $offset => $record ) {
+	$records = $csv->getRecords();
 	
+	array_push($data,$header);
+	foreach ( $records as $offset => $record ) {
+		array_push( $data, $record );
 	}
-?>
+
+	echo json_encode($data);

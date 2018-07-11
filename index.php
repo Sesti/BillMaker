@@ -12,6 +12,7 @@
     <script type="application/javascript" src="assets/scripts/state.js"></script>
     <script type="application/javascript" src="assets/scripts/addEntry.js"></script>
     <script type="application/javascript" src="assets/scripts/main.js"></script>
+    <script type="application/javascript" src="assets/scripts/viewData.js"></script>
 </head>
 <body>
 <main class="app__window">

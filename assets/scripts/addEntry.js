@@ -12,6 +12,7 @@ var Form = {
 	},
  	submit : function(callback){
  	
+ 		//TODO : validations
 		var formArray = new Array();
 	 	var formInputs = document.querySelectorAll( '#form_add_entry input, #form_add_entry textarea' );
 	 	[].forEach.call( formInputs, function(input){
