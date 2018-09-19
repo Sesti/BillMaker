@@ -8,11 +8,11 @@
             <img src="<?= ICON_DIR . "view_data.svg" ?>" alt="View job data">
             <h2> View data </h2>
         </div>
-        <div class="content__choice-box content__choice-box-1-3">
+        <div class="content__choice-box content__choice-create-bill content__choice-box-1-3">
             <img src="<?= ICON_DIR . "create_bill.svg" ?>" alt="Create bill">
             <h2> Create Bill </h2>
         </div>
-        <div class="content__choice-box content__choice-box-1-3 content__choice-box-last">
+        <div class="content__choice-box content__choice-send-bill content__choice-box-1-3 content__choice-box-last">
             <img src="<?= ICON_DIR . "send_bill.svg" ?>" alt="Send bill">
             <h2> Send Bill </h2>
         </div>

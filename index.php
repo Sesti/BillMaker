@@ -23,6 +23,7 @@
         include_once('views/main_menu.php');
         include_once('views/add_entry.php');
         include_once('views/view_data.php');
+        include_once('views/create_bill.php');
     ?>
     
 </main>
