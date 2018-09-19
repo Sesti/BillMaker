@@ -10,10 +10,17 @@ $return = new ReturnObject();
 
 if( isset($_POST['e_token']) && $_POST['e_token'] == 1){
 	
-	$path           = ROOT_PATH . '/bin/entries.csv';
+	$dir            = ROOT_PATH . '/bin';
+	$file           = 'entries.csv';
+	$path           = $dir . '/' . $file;
 	$openingMode    = 'a+';
 	$return->setStatus( 500 );
 	$return->setMessage( "Internal Error" );
+	
+	/* Check if the folder that contains the csv exists */
+	if ( is_dir( $dir ) === false ) {
+		mkdir( $dir );
+	}
 	
 	/* Check if the file exists, if not create it with header */
 	if( !file_exists($path)){

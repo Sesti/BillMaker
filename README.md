@@ -26,3 +26,11 @@ A small app to enter job entry and save them to a csv file. It can also make a b
 - [ ] Set gulp for auto-reload page
 - [ ] Set gulp to start server
 - [ ] Set gulp to optimize js, css, img
+
+## How to install
+
+First, install the composer dependencies with composer.
+You need to install composer first.
+
+`composer install`
+

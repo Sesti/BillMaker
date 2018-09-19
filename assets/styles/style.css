@@ -52,8 +52,8 @@ h2{
     VIEWS
  */
 .app__window{
-    width: 70%;
-    height: 80%;
+    width: 90%;
+    height: 90%;
     background:#FFF;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
@@ -75,7 +75,9 @@ h2{
 .app__view{
     width: 100%;
     transform: translateX(0);
-    padding:0 2vw;
+    padding: 0 2vw 4vw 2vw;
+    overflow-y: auto;
+    height: 87%;
 }
 .app__view-hidden{
     display:none;
@@ -91,23 +93,25 @@ h2{
 }
 .app__view-slideOut{
     position:absolute;
-    -webkit-animation: 1s slideOut;
-    -o-animation: 1s slideOut;
-    animation: 1s slideOut;
+    -webkit-animation: 0.5s slideOut;
+    -o-animation: 0.5s slideOut;
+    animation: 0.5s slideOut;
     animation-fill-mode: forwards;
 }
 .app__view-slideIn {
     position: absolute;
-    -webkit-animation: 1s slideIn;
-    -o-animation: 1s slideIn;
-    animation: 1s slideIn;
+    -webkit-animation: 0.5s slideIn;
+    -o-animation: 0.5s slideIn;
+    animation: 0.5s slideIn;
     animation-fill-mode: forwards;
 }
 .view__container{
     width:100%;
     max-width:920px;
-    display:block;
     margin:0 auto;
+}
+.app__view-view-data .view__container{
+    display:flex;
 }
 .app__view-add-entry .view__container{
     display:flex;
@@ -157,6 +161,7 @@ h2{
  */
 .form__add-entry{
     flex:2;
+    /* overflow-y: auto; */
 }
 .form__add-entry label{
     width:100%;
@@ -242,4 +247,62 @@ h2{
 .form__notification img{
     width:50px;
     margin-bottom:20px;
+}
+
+.content__container {
+    flex: 2;
+}
+.app__view-view-data .content__container{
+    padding-left:30px;
+}
+
+/* Data style */
+.data__table-header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px 0;
+    background: #000;
+    color: #FFF;
+    text-transform: uppercase;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 500;
+}
+.data__table-header div,
+.data__table-row div{
+    text-align:center;
+}
+.data__table-header div:nth-child(4),
+.data__table-row div:nth-child(4){
+    text-align:left;
+}
+
+.data__table-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 6px 0;
+    font-family: "Open Sans", sans-serif;
+    font-size: 13px;
+}
+
+.data__table-row:nth-child(even) {
+    background: #EEE;
+}
+.data__table .data__table-header div:nth-child(1),
+.data__table .data__table-row div:nth-child(1){
+    flex:3;
+}
+.data__table .data__table-header div:nth-child(2),
+.data__table .data__table-row div:nth-child(2){
+    flex:1;
+}
+.data__table .data__table-header div:nth-child(3),
+.data__table .data__table-row div:nth-child(3){
+    flex:3;
+}
+.data__table .data__table-header div:nth-child(4),
+.data__table .data__table-row div:nth-child(4){
+    flex:7;
+    line-height: 1.2em;
 }

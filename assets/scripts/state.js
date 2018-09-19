@@ -2,7 +2,7 @@
 var View = function( querySelector ){
  	var query = querySelector;
  	var element = document.querySelector(querySelector);
- 	var transitionTime = 1000;
+ 	var transitionTime = 500; // Must change in keyframes slideIn and slideOut in style.css
  	
  	this.slideOut = function() {
 		element.classList.add( 'app__view-slideOut' );
